@@ -59,4 +59,6 @@ Bundle 'table_format.vim'
 Bundle 'SuperTab-continued.'
 let g:SuperTabDefaultCompletionType = "context"
 
+Bundle 'vimwiki'
+
 runtime macros/matchit.vim
