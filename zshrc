@@ -1,8 +1,5 @@
-export TMP=/tmp
-export TEMP=/tmp
-
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
+HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory
@@ -29,7 +26,7 @@ fi
 }
 
 autoload -Uz vcs_info
-zstyle ':vcs_info:*' enable git cvs svn
+zstyle ':vcs_info:*' enable git cvs svn hg
 zstyle ':vcs_info:git:*' formats ' (%b)'
 zstyle ':vcs_info:git:*' actionformats ' (%b|%a)'
 
@@ -47,8 +44,6 @@ export LANG=de_DE.utf8
 export DESKTOP_SESSION=LXDE
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-#export PATH=/home/benjo/.gem/ruby/1.9.1/bin:$PATH
 
 export PATH=$PATH:/home/benjo/bin:/home/benjo/bin/gcc-arm-none-eabi/bin
 export CPPUTEST_HOME=/home/benjo/source/cpputest
