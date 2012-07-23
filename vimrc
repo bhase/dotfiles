@@ -61,4 +61,6 @@ let g:SuperTabDefaultCompletionType = "context"
 
 Bundle 'vimwiki'
 
+Bundle 'RDoc'
+
 runtime macros/matchit.vim
