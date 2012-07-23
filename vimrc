@@ -42,7 +42,6 @@ set foldmethod=syntax
 set cino=:0l1st0(0W4
 set cscopeprg=mlcscope
 set textwidth=76
-"filetype plugin on
 
 Bundle 'clang-complete'
 " Complete options (disable preview scratch window)
@@ -63,4 +62,31 @@ Bundle 'vimwiki'
 
 Bundle 'RDoc'
 
+Bundle 'localvimrc'
+let g:localvimrc_sandbox=0
+let g:localvimrc_ask=0
+
+
 runtime macros/matchit.vim
+runtime ftplugin/man.vim
+nmap K :Man <cword><CR>
+
+if has("gui_running")
+	nmap <C-space>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-space>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-space>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-space>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-space>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-space>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+	nmap <C-space>i :cs find i <C-R>=expand("<cfile>")<CR>$<CR>
+	nmap <C-space>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+else
+	nmap <C-@>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-@>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-@>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-@>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-@>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-@>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+	nmap <C-@>i :cs find i <C-R>=expand("<cfile>")<CR>$<CR>
+	nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+endif
