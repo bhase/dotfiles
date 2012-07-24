@@ -11,6 +11,8 @@ bindkey -v
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/benjo/.zshrc'
 
+autoload -Uz promptinit
+promptinit
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
@@ -44,6 +46,18 @@ export LANG=de_DE.utf8
 export DESKTOP_SESSION=LXDE
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# reset bindings from /etc/zsh/zshrc
+[[ -z "$terminfo[kcuu1]" ]] || bindkey -M viins "$terminfo[kcuu1]" up-line-or-history
+[[ -z "$terminfo[kcud1]" ]] || bindkey -M viins "$terminfo[kcud1]" down-line-or-history
+
+[[ "$terminfo[kcuu1]" == ""* ]] && bindkey -M viins "${terminfo[kcuu1]/O/[}" up-line-or-history
+[[ "$terminfo[kcud1]" == ""* ]] && bindkey -M viins "${terminfo[kcud1]/O/[}" down-line-or-history
+
+bindkey "^[[2~" yank                    # Insert
+bindkey "^[[3~" delete-char             # Del
+bindkey "^[[5~" history-search-backward # PageUp
+bindkey "^[[6~" history-search-forward  # PageDown
 
 export PATH=$PATH:/home/benjo/bin:/home/benjo/bin/gcc-arm-none-eabi/bin
 export CPPUTEST_HOME=/home/benjo/source/cpputest
