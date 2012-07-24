@@ -66,6 +66,7 @@ Bundle 'localvimrc'
 let g:localvimrc_sandbox=0
 let g:localvimrc_ask=0
 
+Bundle 'a.vim'
 
 runtime macros/matchit.vim
 runtime ftplugin/man.vim
