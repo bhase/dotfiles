@@ -1,7 +1,8 @@
  set nocompatible               " be iMproved
- filetype off                   " required!
+
+" ---------------------- Bundle stuff ----------------------------------
  
- set t_Co=16
+ filetype off                   " required!
 
  set rtp+=~/.vim/bundle/vundle/
  call vundle#rc()
@@ -50,6 +51,7 @@ set completeopt="menu,menuone,longest,preview"
 set pumheight=15
 
 Bundle 'Solarized'
+set t_Co=16
 let g:solarized_termcolors=16
 colorscheme solarized
 
@@ -68,9 +70,12 @@ let g:localvimrc_ask=0
 
 Bundle 'a.vim'
 
+" ----------------------------------------------------------------------
+
 runtime macros/matchit.vim
 runtime ftplugin/man.vim
 nmap K :Man <cword><CR>
+set hls
 
 if has("gui_running")
 	nmap <C-space>s :cs find s <C-R>=expand("<cword>")<CR><CR>
