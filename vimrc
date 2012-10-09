@@ -51,8 +51,8 @@ set completeopt="menu,menuone,longest,preview"
 set pumheight=15
 
 Bundle 'Solarized'
-set t_Co=16
 let g:solarized_termcolors=16
+let g:solarized_termtrans=1
 colorscheme solarized
 
 Bundle 'table_format.vim'
