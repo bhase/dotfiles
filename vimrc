@@ -96,3 +96,7 @@ else
 	nmap <C-@>i :cs find i <C-R>=expand("<cfile>")<CR>$<CR>
 	nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 endif
+
+" Fix unbearable slow autocompletion for ruby files
+autocmd FileType ruby set foldmethod=indent
+autocmd FileType !ruby set foldmethod=syntax
