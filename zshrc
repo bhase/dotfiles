@@ -44,6 +44,8 @@ PS1="%F{green}%n@%m:%F{yellow}%~%f%(1v.%F{green}%1v%f.) %# "
 export DEJAGNU="/etc/dejagnu.conf"
 export LANG=de_DE.utf8
 export DESKTOP_SESSION=LXDE
+export LESS="-R"
+export RI="--format=ansi"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
