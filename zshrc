@@ -17,7 +17,7 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-eval $(dircolors /home/benjo/.zsh/dircolors.ansi-light)
+eval $(dircolors /home/benjo/.zsh/dircolors.ansi-dark)
 alias ls='ls --color'
 alias vi='vim'
 
