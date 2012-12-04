@@ -63,3 +63,5 @@ bindkey "^[[6~" history-search-forward  # PageDown
 
 export PATH=$PATH:/home/benjo/bin:/home/benjo/bin/gcc-arm-none-eabi/bin
 export CPPUTEST_HOME=/home/benjo/source/cpputest
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
