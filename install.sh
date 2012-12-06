@@ -38,6 +38,7 @@ $VIM -c BundleInstall -c q -c q
 rvm requirements
 echo packages to be installed
 echo launchy taskwarrior zsh rxvt-unicode meld gammu wammu cscope
+echo makedepend (xutils-dev)
 echo
 echo gems to be installed after ruby
 echo rake-builder cucumber sinatra
