@@ -1,0 +1,72 @@
+
+alignment bottom_left
+background no
+border_width 1
+cpu_avg_samples 2
+default_color white
+default_outline_color white
+default_shade_color white
+double_buffer no
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+gap_x 5
+gap_y 40
+minimum_size 330 500
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+own_window yes
+own_window_class Conky
+own_window_transparent yes
+own_window_type normal
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+stippled_borders 0
+update_interval 3.0
+uppercase no
+use_spacer none
+show_graph_scale no
+show_graph_range no
+use_xft yes
+xftfont mono-8
+
+TEXT
+$nodename - $sysname $kernel on $machine
+${color grey}Uptime:$color $uptime ${color grey}- Load:$color $loadavg
+$hr
+${color grey}CPU usage (total):${color} $cpu% ${cpubar}
+${color grey}CPU 0 $color(${freq_g 1}GHz): ${cpu cpu0}% ${cpubar cpu0}
+${color grey}CPU 1 $color(${freq_g 2}GHz): ${cpu cpu1}% ${cpubar cpu1}
+${color grey}${cpugraph 22,330 0000ff 00ff00}
+$hr
+${color grey}RAM Usage:$color $mem/$memmax - $memperc% ${membar 4}
+${color grey}${memgraph 22,330 00ff00 0000ff}
+${color grey}Swap Usage:$color $swap/$swapmax - $swapperc% ${swapbar 4}
+${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
+$hr
+${color grey}Battery: $color ${battery_percent C1BC}% - ${battery_time C1BC} ${battery_bar C1BC}
+${color grey}File systems:
+${color grey} / $color${fs_free /}/${fs_size /} ${fs_bar 6 /}
+${color grey} /var $color${fs_free /var}/${fs_size /var} ${fs_bar 6 /var}
+${color grey} /usr $color${fs_free /usr}/${fs_size /usr} ${fs_bar 6 /usr}
+${color grey} /home $color${fs_free /home}/${fs_size /home} ${fs_bar 6 /home}
+${color grey} /media/debian $color${fs_free /media/debian}/${fs_size /media/debian} ${fs_bar 6 /media/debian}
+${color grey}Networking:
+${color grey} eth0 (${addr eth0}):${if_up eth0}$color ${upspeed eth0}/s${color grey} - Down:$color ${downspeed eth0}/s $else (down)$endif
+${color grey} wlan0 (${addr wlan0}):${if_up wlan0}$color ${upspeed wlan0}/s${color grey} - Down:$color ${downspeed wlan0}/s
+  ${wireless_essid wlan0} (${wireless_ap wlan0}) ${wireless_bitrate wlan0}
+  ${wireless_link_qual wlan0}/${wireless_link_qual_max wlan0} ${wireless_link_qual_perc wlan0}% ${wireless_link_bar wlan0}$else (down)$endif${if_existing /sys/class/net/wlan1}
+${color grey} wlan1 (${addr wlan1}):${if_up wlan1}$color ${upspeed wlan1}/s${color grey} - Down:$color ${downspeed wlan1}/s
+  ${wireless_essid wlan1} (${wireless_ap wlan1}) ${wireless_bitrate wlan1}
+  ${wireless_link_qual wlan1}/${wireless_link_qual_max wlan1} ${wireless_link_qual_perc wlan1}% ${wireless_link_bar wlan1}$else (down)$endif$endif${if_existing /sys/class/net/wlan2}
+${color grey} wlan2 (${addr wlan2}):${if_up wlan2}$color ${upspeed wlan2}/s${color grey} - Down:$color ${downspeed wlan2}/s
+  ${wireless_essid wlan2} (${wireless_ap wlan2}) ${wireless_bitrate wlan2}
+  ${wireless_link_qual wlan2}/${wireless_link_qual_max wlan2} ${wireless_link_qual_perc wlan2}% ${wireless_link_bar wlan2}$else (down)$endif$endif${if_existing /dev/ttyUSB1}
+${color grey} ppp0 (${addr ppp0}):${if_up ppp0}$color ${upspeed ppp0}/s (${totalup ppp0})${color grey} - Down:$color ${downspeed ppp0}/s (${totaldown ppp0})$else (down)$endif$endif
+$hr
+${color grey}Name               PID   CPU%   MEM%
+${color lightgrey} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
+${color lightgrey} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+${color lightgrey} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+${color lightgrey} ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
