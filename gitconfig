@@ -1,0 +1,18 @@
+[core]
+	autocrlf = input
+	editor = vim
+[alias]
+	st = status
+[diff]
+	renames = copy
+[user]
+	name = Benjamin Hase
+	email = benjamin.hase@web.de
+
+[color]
+	branch = auto
+	diff = auto
+	grep = auto
+	status = auto
+	interactive = auto
+	pager = true
