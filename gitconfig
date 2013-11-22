@@ -16,3 +16,5 @@
 	status = auto
 	interactive = auto
 	pager = true
+[push]
+	default = simple
