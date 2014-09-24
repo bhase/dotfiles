@@ -49,6 +49,10 @@ Bundle 'clang-complete'
 set completeopt="menu,menuone,longest,preview"
 " Limit popup menu height
 set pumheight=15
+let g:clang_use_library=1
+let g:clang_complete_copen=1
+let g:clang_complete_macros=1
+let g:clang_complete_patterns=0
 
 Bundle 'Solarized'
 let g:solarized_termcolors=16
@@ -72,6 +76,10 @@ Bundle 'vim-ruby/vim-ruby'
 
 Bundle 'a.vim'
 
+Bundle 'snipMate'
+
+Bundle 'kovisoft/slimv'
+let g:lisp_rainbow=1
 " ----------------------------------------------------------------------
 
 runtime macros/matchit.vim
@@ -99,6 +107,4 @@ else
 	nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 endif
 
-" Fix unbearable slow autocompletion for ruby files
-autocmd FileType ruby set foldmethod=indent
-autocmd FileType !ruby set foldmethod=syntax
+autocmd FileType ruby set sw=2 ts=2
