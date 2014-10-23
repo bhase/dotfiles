@@ -107,4 +107,4 @@ else
 	nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 endif
 
-autocmd FileType ruby set sw=2 ts=2
+autocmd FileType ruby set sw=2 ts=2 expandtab
