@@ -1,40 +1,44 @@
  set nocompatible               " be iMproved
 
 " ---------------------- Bundle stuff ----------------------------------
- 
- filetype off                   " required!
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
- set rtp+=~/.vim/bundle/vundle/
- call vundle#rc()
+" let Vundle manage Vundle - required!
+Plugin 'VundleVim/Vundle.vim'
 
- " let Vundle manage Vundle
- " required! 
- Bundle 'gmarik/vundle'
+" ----------------------------------------------------------------------
 
- " My Bundles here:
- "
- " original repos on github
-" Bundle 'tpope/vim-fugitive'
-" Bundle 'Lokaltog/vim-easymotion'
-" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Bundle 'tpope/vim-rails.git'
- " vim-scripts repos
-" Bundle 'L9'
-" Bundle 'FuzzyFinder'
- " non github repos
-" Bundle 'git://git.wincent.com/command-t.git'
- " ...
+Plugin 'altercation/vim-colors-solarized'
 
- filetype plugin indent on     " required!
- "
- " Brief help
- " :BundleList          - list configured bundles
- " :BundleInstall(!)    - install(update) bundles
- " :BundleSearch(!) foo - search(or refresh cache first) for foo
- " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
- "
- " see :h vundle for more details or wiki for FAQ
- " NOTE: comments after Bundle command are not allowed..
+Plugin 'vimwiki'
+
+Plugin 'dhruvasagar/vim-table-mode'
+
+Plugin 'RDoc'
+
+Plugin 'localvimrc'
+let g:localvimrc_sandbox=0
+let g:localvimrc_ask=0
+
+Plugin 'vim-ruby/vim-ruby'
+
+Plugin 'a.vim'
+
+Plugin 'snipMate'
+
+Plugin 'kovisoft/slimv'
+let g:lisp_rainbow=1
+let g:slimv_preferred = 'clisp'
+
+Plugin 'thoughtbot/vim-rspec'
+
+" ----------------------------------------------------------------------
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" ----------------------------------------------------------------------
 
 syntax on
 
@@ -44,43 +48,7 @@ set cino=:0l1st0(0W4
 set cscopeprg=mlcscope
 set textwidth=76
 
-Bundle 'clang-complete'
-" Complete options (disable preview scratch window)
-set completeopt="menu,menuone,longest,preview"
-" Limit popup menu height
-set pumheight=15
-let g:clang_use_library=1
-let g:clang_complete_copen=1
-let g:clang_complete_macros=1
-let g:clang_complete_patterns=0
-
-Bundle 'Solarized'
-let g:solarized_termcolors=16
-let g:solarized_termtrans=1
 colorscheme solarized
-
-Bundle 'table_format.vim'
-
-Bundle 'SuperTab-continued.'
-let g:SuperTabDefaultCompletionType = "context"
-
-Bundle 'vimwiki'
-
-Bundle 'RDoc'
-
-Bundle 'localvimrc'
-let g:localvimrc_sandbox=0
-let g:localvimrc_ask=0
-
-Bundle 'vim-ruby/vim-ruby'
-
-Bundle 'a.vim'
-
-Bundle 'snipMate'
-
-Bundle 'kovisoft/slimv'
-let g:lisp_rainbow=1
-" ----------------------------------------------------------------------
 
 runtime macros/matchit.vim
 runtime ftplugin/man.vim
