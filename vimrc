@@ -34,6 +34,11 @@ let g:slimv_preferred = 'clisp'
 
 Plugin 'thoughtbot/vim-rspec'
 
+Plugin 'Markdown'
+
+Plugin 'dgsuarez/vim-ticard'
+
+Plugin 'openscad.vim'
 " ----------------------------------------------------------------------
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -54,6 +59,8 @@ runtime macros/matchit.vim
 runtime ftplugin/man.vim
 nmap K :Man <cword><CR>
 set hls
+
+nmap <C-M-Space> <Plug>VimwikiToggleListItem
 
 if has("gui_running")
 	nmap <C-space>s :cs find s <C-R>=expand("<cword>")<CR><CR>
