@@ -23,7 +23,7 @@ if [ ! -x $VIM ] ; then
 fi
 
 # create symlinks
-for i in gammurc task taskrc vimrc Xresources zsh zshrc conkyrc; do
+for i in task taskrc vimrc Xresources zshenv zshrc ; do
 	ln -s $i ~/.$i
 done
 
