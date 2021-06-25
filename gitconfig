@@ -18,3 +18,5 @@
 	pager = true
 [push]
 	default = simple
+[init]
+	defaultBranch = trunk

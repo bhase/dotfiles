@@ -39,6 +39,15 @@ Plugin 'Markdown'
 Plugin 'dgsuarez/vim-ticard'
 
 Plugin 'openscad.vim'
+
+Plugin 'jrozner/vim-antlr'
+
+Plugin 'rust-lang/rust.vim'
+
+Plugin 'autozimu/LanguageClient-neovim'
+
+Plugin 'framallo/taskwarrior.vim'
+
 " ----------------------------------------------------------------------
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -83,3 +92,27 @@ else
 endif
 
 autocmd FileType ruby set sw=2 ts=2 expandtab
+autocmd FileType antlr4 set sw=2 ts=2 expandtab
+autocmd FileType c set sw=4 ts=4 expandtab
+
+" --------------------------------------
+" Start of LanguageClient configuration
+" --------------------------------------
+"
+" Required for operations modifying multiple buffers like rename.
+set hidden
+
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+    \ 'ruby': ['solargraph', 'stdio'],
+    \ }
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
+" --------------------------------------
+" End of LanguageClient configuration
+" --------------------------------------

@@ -87,10 +87,11 @@
 
 URxvt.intensityStyles:  false
 
-URxvt.perl-ext-common:  default,tabbed,vtwheel,url-select
-URxvt.keysym.M-u:       perl:url-select:select_next
+URxvt.perl-ext-common:  default,tabbed
+! ,vtwheel,url-select
+! URxvt.keysym.M-u:       perl:url-select:select_next
 URxvt.urlLauncher:      firefox
-URxvt.underlineURLs:    true
+! URxvt.underlineURLs:    true
 
 URxvt.tabbed.tabbar-fg: 2
 URxvt.tabbed.tabbar-bg: 8
@@ -99,7 +100,13 @@ URxvt.tabbed.tab-bg:    8
 
 URxvt.geometry: 120x40
 
-urxvt.font:           xft:Inconsolata-10:autohint=true:antialias=true
-urxvt.boldFont:       xft:Inconsolata-10:bold:autohint=true:antialias=true
-urxvt.italicFont:     xft:Inconsolata-10:italic:autohint=true:antialias=true
-urxvt.boldItalicFont: xft:Inconsolata-10:bold:italic:autohint=true:antialias=true
+! Some fonts
+! FiraCode
+! Terminus
+! Levien-Inconsolata
+! RobotoMono
+! Inconsolata - a quite nice font, but makes problems currently
+URxvt.font:           xft:RobotoMono:size=10:antialias=true:autohint=true
+URxvt.boldFont:       xft:RobotoMono:bold:size=10:antialias=true:autohint=true
+URxvt.italicFont:     xft:RobotoMono:italic:autohint=true:antialias=true:pixelsize=10
+URxvt.boldItalicFont: xft:RobotoMono:bold:italic:autohint=true:antialias=true:pixelsize=10
