@@ -62,6 +62,12 @@ set cino=:0l1st0(0W4
 set cscopeprg=mlcscope
 set textwidth=76
 
+set scrolloff=2
+set sidescrolloff=4
+set formatoptions+=j " Delete comment character when joining lines
+set autoread
+set listchars=trail:-,nbsp:%,tab:>\ ,eol:$
+
 colorscheme solarized
 
 runtime macros/matchit.vim
